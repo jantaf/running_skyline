@@ -1,4 +1,5 @@
 # Running_skyline
+## NOTE: This is a fork of [felixgomez/gitlab-skyline](https://github.com/yihong0618/running_skyline) to add only activities type `Run` from Strava API and updated libs to work stravalib 2.0 
 Generate a 3D Skyline in STL format and from `Strava` or `GPX`
 ![image](https://user-images.githubusercontent.com/15976103/109935576-b54f1000-7d08-11eb-8170-cb930352e451.png)
 

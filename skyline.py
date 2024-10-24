@@ -188,9 +188,15 @@ class RunningSkyline:
         # make year range
         self._make_year_before_after()
         return self.client.get_activities(before=self.before, after=self.after)
-
+        
+    def filter_running_activities_from_strava(self):
+        activities = self.get_strava_activities()
+        running_activities = [activity for activity in activities if activity.type.root == 'Run']
+        return running_activities
+    
     def __make_strava_activites(self):
-        activites = list(self.get_strava_activities())
+        running_activities=self.filter_running_activities_from_strava()
+        activites = list(running_activities)
         activites.reverse()
         activites = [
             ACTIVITY_NAME_TUPLE(a.start_date_local.date(), a.distance)
